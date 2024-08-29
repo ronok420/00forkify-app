@@ -33,7 +33,9 @@ const data = await  getJSON(`${API_URL}/${id}`);
     }
     catch(err){
         // alert(err);
-        console.error(`${err} 🤬😡😠😡🤬`);
+        // console.error(`${err}`);
+
+       throw err;
 
     }
 

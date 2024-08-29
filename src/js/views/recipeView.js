@@ -32,6 +32,21 @@ class recipeView{
         this.#parentELement.insertAdjacentHTML("afterbegin",markup);
 
      }
+     #errorDefault="sorry we couldn't find  the recipe ";
+     renderError(errorMessage=this.#errorDefault){
+      const markup=`<div class="error">
+            <div>
+              <svg>
+                <use href="${icons}#icon-alert-triangle"></use>
+              </svg>
+            </div>
+            <p>${errorMessage}</p>
+          </div> -->
+      `;
+      this.#clear();
+      // recipeContainer.innerText='';
+      this.#parentELement.insertAdjacentHTML("afterbegin",markup);
+     }
      addHandlerRender(handler){
       for (const ev of ['hashchange', 'load']) {
         window.addEventListener(ev, handler);

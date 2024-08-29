@@ -634,7 +634,8 @@ const showRecipe = async function() {
         //rendering recipeView
         (0, _recipeViewJsDefault.default).render(recipe);
     } catch (err) {
-        alert(err);
+        // alert(err);
+        (0, _recipeViewJsDefault.default).renderError(`${err} \u{1F92C}\u{1F621}\u{1F620}\u{1F621}\u{1F92C}`);
     }
 };
 // showRecipe();
@@ -644,7 +645,10 @@ const showRecipe = async function() {
 // for (const ev of ['hashchange', 'load']) {
 //   window.addEventListener(ev, showRecipe);
 // }
-(0, _recipeViewJsDefault.default).addHandlerRender(showRecipe);
+const init = function() {
+    (0, _recipeViewJsDefault.default).addHandlerRender(showRecipe);
+};
+init();
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","core-js/modules/web.immediate.js":"49tUX","regenerator-runtime/runtime":"dXNgZ","./model.js":"Y4A21","./views/recipeView.js":"l60JC"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
@@ -2537,7 +2541,8 @@ const loadRecipe = async function(id) {
         state.recipe = recipe;
     } catch (err) {
         // alert(err);
-        console.error(`${err} \u{1F92C}\u{1F621}\u{1F620}\u{1F621}\u{1F92C}`);
+        // console.error(`${err}`);
+        throw err;
     }
 };
 
@@ -2608,6 +2613,21 @@ class recipeView {
         `;
         this.#parentELement.innerHTML = "";
         // parentEl.incertAdjacentHTML('afterbeing',markup);
+        this.#parentELement.insertAdjacentHTML("afterbegin", markup);
+    }
+    #errorDefault = "sorry we couldn't find  the recipe ";
+    renderError(errorMessage = this.#errorDefault) {
+        const markup = `<div class="error">
+            <div>
+              <svg>
+                <use href="${(0, _iconsSvgDefault.default)}#icon-alert-triangle"></use>
+              </svg>
+            </div>
+            <p>${errorMessage}</p>
+          </div> -->
+      `;
+        this.#clear();
+        // recipeContainer.innerText='';
         this.#parentELement.insertAdjacentHTML("afterbegin", markup);
     }
     addHandlerRender(handler) {

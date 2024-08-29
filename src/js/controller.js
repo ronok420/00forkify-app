@@ -50,7 +50,9 @@ const showRecipe = async function(){
 
   }
   catch(err){
-    alert(err);
+    // alert(err);
+    recipeView.renderError(`${err} 🤬😡😠😡🤬`);
+   
 
   }
 }
@@ -64,7 +66,11 @@ const showRecipe = async function(){
 // for (const ev of ['hashchange', 'load']) {
 //   window.addEventListener(ev, showRecipe);
 // }
-recipeView.addHandlerRender(showRecipe);
+const  init = function(){
+  recipeView.addHandlerRender(showRecipe);
+}
+init();
+
 
 ///////////////////////////////////////
 

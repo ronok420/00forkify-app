@@ -641,10 +641,10 @@ const showRecipe = async function() {
 // window.addEventListener('hashchange',showRecipe);
 // window.addEventListener('load',showRecipe);
 //  ['hashchange','load'].forEach(ev=>window.addEventListener(ev,showRecipe));
-for (const ev of [
-    "hashchange",
-    "load"
-])window.addEventListener(ev, showRecipe);
+// for (const ev of ['hashchange', 'load']) {
+//   window.addEventListener(ev, showRecipe);
+// }
+(0, _recipeViewJsDefault.default).addHandlerRender(showRecipe);
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","core-js/modules/web.immediate.js":"49tUX","regenerator-runtime/runtime":"dXNgZ","./model.js":"Y4A21","./views/recipeView.js":"l60JC"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
@@ -2547,7 +2547,7 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "API_URL", ()=>API_URL);
 parcelHelpers.export(exports, "TIME_OUT", ()=>TIME_OUT);
 const API_URL = `https://forkify-api.herokuapp.com/api/v2/recipes`;
-const TIME_OUT = 0.5;
+const TIME_OUT = 10;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lVRAz":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -2609,6 +2609,12 @@ class recipeView {
         this.#parentELement.innerHTML = "";
         // parentEl.incertAdjacentHTML('afterbeing',markup);
         this.#parentELement.insertAdjacentHTML("afterbegin", markup);
+    }
+    addHandlerRender(handler) {
+        for (const ev of [
+            "hashchange",
+            "load"
+        ])window.addEventListener(ev, handler);
     }
     #generateMarkup() {
         return `

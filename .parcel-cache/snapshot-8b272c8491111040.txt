@@ -5,8 +5,8 @@
 88C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\forkify-flowchart-part-3.png133681774569355617 0
 128C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\node_modules\lmdb\dependencies\lz4\lib\dll\example\fullbench-dll.sln133681775317585090 0
 122C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\node_modules\csso\node_modules\css-tree\lib\syntax\node\Url.js133681775321021764 0
-86C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\dist\index.e37f48ea.js.map133689753166061519 0
 132C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\node_modules\@parcel\optimizer-svgo\node_modules\svgo\plugins\plugins.js133681775309030333 0
+86C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\dist\index.e37f48ea.js.map133693880954080383 0
 107C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\node_modules\type-fest\ts41\delimiter-case.d.ts133681775302850008 0
 94C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\node_modules\css-what\package.json133681775302567988 0
 118C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\node_modules\@swc\helpers\cjs\_interop_require_default.cjs133681775311145532 0
@@ -18,6 +18,7 @@
 98C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\node_modules\@swc\helpers\_\_using_ctx133681775326636474 1
 113C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\node_modules\core-js\internals\to-positive-integer.js133681775392058910 0
 127C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\node_modules\csso\node_modules\css-tree\lib\lexer\prepare-tokens.js133681775320253822 0
+82C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\dist\index.e37f48ea.js133693880953959378 0
 90C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\node_modules\binary-extensions133681775300054355 1
 117C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\node_modules\caniuse-lite\data\features\array-includes.js133681775308152362 0
 101C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\node_modules\cosmiconfig\dist\readFile.js133681775302996842 0
@@ -32,7 +33,7 @@
 88C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\forkify-flowchart-part-1.png133681774569146117 0
 100C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\node_modules\core-js\es\instance\bind.js133681775319645442 0
 98C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\node_modules\core-js\full\parse-int.js133681775382168165 0
-64C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\dist133689753166081448 1
+64C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\dist133693880954090567 1
 110C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\node_modules\csso\node_modules\css-tree\cjs\parser133681775315679383 1
 132C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\node_modules\@parcel\optimizer-svgo\node_modules\css-select\lib\types.js133681775303386284 0
 115C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\node_modules\core-js\stable\object\define-properties.js133681775328571700 0
@@ -133,7 +134,7 @@
 127C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\node_modules\csso\node_modules\css-tree\lib\syntax\node\Brackets.js133681775316946805 0
 74C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\prettierrc.txt133681774569395535 0
 101C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\node_modules\electron-to-chromium\LICENSE133681775293678860 0
-76C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\src\js\config.js133689752629035188 0
+76C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\src\js\config.js133693115837289450 0
 99C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\node_modules\@parcel\optimizer-svgo\src133681775296117862 1
 111C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\node_modules\svgo\plugins\convertEllipseToCircle.js133681775310695853 0
 63C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\src133681774569449923 1
@@ -232,7 +233,7 @@
 101C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\node_modules\core-js\full\map\map-keys.js133681775378603397 0
 113C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\node_modules\core-js\full\instance\group-by-to-map.js133681775368699477 0
 96C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\node_modules\semver\functions\neq.js133681775307433717 0
-80C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\src\js\controller.js133689745560303035 0
+80C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\src\js\controller.js133693881534911319 0
 133C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\node_modules\@swc\helpers\_\_class_private_field_destructure\package.json133681775320373513 0
 118C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\node_modules\caniuse-lite\data\features\wasm-tail-calls.js133681775357724158 0
 123C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\node_modules\core-js\modules\esnext.reflect.get-own-metadata.js133681775359395333 0
@@ -246,20 +247,20 @@
 95C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\node_modules\mdn-data\css\readme.md133681775307722224 0
 104C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\node_modules\caniuse-lite\data\regions\JM.js133681775329920628 0
 106C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\node_modules\core-js\stable\instance\splice.js133681775388709446 0
-76C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\src\js\helper.js133689753179996257 0
+76C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\src\js\helper.js133693114478140038 0
 113C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\node_modules\core-js\features\object\lookup-setter.js133681775378486101 0
 107C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\node_modules\core-js\stable\typed-array\fill.js133681775361694952 0
 128C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\node_modules\htmlnano\docs\versioned_docs\version-2.0.0\020-usage.md133681775311624661 0
 96C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\node_modules\node-addon-api\index.js133681775304735024 0
 96C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\node_modules\core-js\configurator.js133681775325972388 0
 110C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\node_modules\core-js\full\array\virtual\reverse.js133681775385235224 0
-75C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\src\js\model.js133689740477865217 0
+75C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\src\js\model.js133693112564844641 0
 104C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\node_modules\caniuse-lite\data\regions\HT.js133681775328641577 0
 114C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\node_modules\caniuse-lite\data\features\svg-filters.js133681775355920054 0
 118C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\node_modules\node-gyp-build-optional-packages\package.json133681775299230889 0
 72C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\src\js\views133684573660857015 1
 99C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\node_modules\@parcel\cache\lib\index.js133681775302169061 0
-86C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\src\js\views\recipeView.js133687283798987234 0
+86C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\src\js\views\recipeView.js133693880455763386 0
 99C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\node_modules\nth-check\lib\compile.d.ts133681775305946982 0
 79C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\src\img\favicon.png133681774569415765 0
 102C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\node_modules\core-js\full\object\values.js133681775397619843 0
@@ -9708,6 +9709,5 @@
 104C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\node_modules\.bin\update-browserslist-db.cmd133681775399444120 0
 84C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\dist\forkify.3464ddca.js133681774568867257 0
 88C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\dist\forkify.3464ddca.js.map133681774568882438 0
-86C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\dist\index.62406edb.js.map133681774568912358 0
 83C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\dist\icons.21bad73c.svg133689753087023072 0
-82C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\dist\index.e37f48ea.js133689753166004528 0
+86C:\Users\sparr\OneDrive\Desktop\forkify-clone\00forkify-app\dist\index.62406edb.js.map133681774568912358 0

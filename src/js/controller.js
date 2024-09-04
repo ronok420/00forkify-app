@@ -3,6 +3,7 @@ import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import * as model from './model.js';
 import recipeView from './views/recipeView.js';
+import searchView from './views/searchView.js';
 // console.log(icons);
 
 
@@ -57,6 +58,20 @@ const showRecipe = async function(){
   }
 }
 
+
+const controlSearchResult = async function(){
+  try{
+    const query = searchView.getQuery();
+    if(!query) return;
+   await model.loadSearchResult(query);
+   console.log(model.state.search.result);
+  }catch(err){
+  console.log(err);
+  }
+  }
+  // controlSearchResult();
+
+
 // showRecipe();
 // window.addEventListener('hashchange',showRecipe);
 // window.addEventListener('load',showRecipe);
@@ -68,28 +83,9 @@ const showRecipe = async function(){
 // }
 const  init = function(){
   recipeView.addHandlerRender(showRecipe);
+  searchView.addHandlerSearch(controlSearchResult);
 }
 init();
 
 
-///////////////////////////////////////
 
-
-
-
-// {
-//   "name": "forkify",
-//   "version": "1.0.0",
-//   "description": "recipe app",
-//   "main": "index.html",
-//   "scripts": {
-//     "start": "parcel index.html",
-//     "build": "parcel build index.html --dist-dir ./dist"
-//   },
-//   "author": "",
-//   "license": "ISC",
-//   "dependencies": {
-//     "parcel": "^2.12.0",
-//     "sass": "^1.77.8"
-//   }
-// }

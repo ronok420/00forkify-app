@@ -4,6 +4,10 @@ import { getJSON } from "./helper";
 export const  state ={
     recipe:{
 
+    },
+    search:{
+        query:'',
+        result:[]
     }
 }
 
@@ -23,7 +27,7 @@ export const  loadRecipe = async function(id) {
 
 
 
-const data = await  getJSON(`${API_URL}/${id}`);
+    const data = await  getJSON(`${API_URL}/${id}`);
 
    console.log(data);
    console.log(data.data.recipe);
@@ -43,3 +47,27 @@ const data = await  getJSON(`${API_URL}/${id}`);
 
     
 } 
+export const  loadSearchResult = async function(query){
+    try{
+        state.search.query=query;
+        // https://forkify-api.herokuapp.com/api/v2/recipes?search=pizza
+        const data = await getJSON(`${API_URL}/?search=${query}`);
+        console.log(data);
+        state.search.result=data.data.recipes.map(rec=>{
+            return{
+                id:rec.id,
+                title:rec.title,
+                publisher:rec.publisher,
+                image:rec.image_url
+
+            };
+        })
+    //    console.log(state.search.result);
+
+    }
+    catch(err){
+        console.log(err);
+        
+    }
+}
+// loadSearchResult("pizza");

@@ -4,6 +4,8 @@ import 'regenerator-runtime/runtime';
 import * as model from './model.js';
 import recipeView from './views/recipeView.js';
 import searchView from './views/searchView.js';
+import resultsView from './views/resultsView.js';
+
 // console.log(icons);
 
 
@@ -12,25 +14,10 @@ import searchView from './views/searchView.js';
 
 
 
-
-// const renderSpinner = function (parentEl){
-//   const markup=`
-//   <div class="spinner">
-//           <svg>
-//             <use href="${icons}#icon-loader"></use>
-//           </svg>
-//         </div> -->
-//   `;
-//   parentEl.innerHTML='';
-//   // parentEl.incertAdjacentHTML('afterbeing',markup);
-//   parentEl.insertAdjacentHTML("afterbegin",markup);
-// };
-
-
-
 // https://forkify-api.herokuapp.com/v2
 const showRecipe = async function(){
   try{
+    console.log(window.location.hash);
     const id= window.location.hash.slice(1);
    if(!id) return;
    
@@ -61,10 +48,14 @@ const showRecipe = async function(){
 
 const controlSearchResult = async function(){
   try{
+    resultsView.renderSpinner();
+    console.log(resultsView);
+    
     const query = searchView.getQuery();
     if(!query) return;
    await model.loadSearchResult(query);
-   console.log(model.state.search.result);
+   resultsView.render(model.state.search.result);
+  //  console.log(model.state.search.result);
   }catch(err){
   console.log(err);
   }

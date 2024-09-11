@@ -1,4 +1,4 @@
-import { API_URL } from "./config";
+import { API_URL,ResPerPage } from "./config";
 import { getJSON } from "./helper";
 
 export const  state ={
@@ -7,7 +7,9 @@ export const  state ={
     },
     search:{
         query:'',
-        result:[]
+        result:[],
+        resultPerPage:ResPerPage,
+        page:1,
     }
 }
 
@@ -29,8 +31,8 @@ export const  loadRecipe = async function(id) {
 
     const data = await  getJSON(`${API_URL}/${id}`);
 
-   console.log(data);
-   console.log(data.data.recipe);
+//    console.log(data);
+//    console.log(data.data.recipe);
    let {recipe} =data.data;
    state.recipe=recipe;
 
@@ -52,7 +54,7 @@ export const  loadSearchResult = async function(query){
         state.search.query=query;
         // https://forkify-api.herokuapp.com/api/v2/recipes?search=pizza
         const data = await getJSON(`${API_URL}/?search=${query}`);
-        console.log(data);
+        // console.log(data);
         state.search.result=data.data.recipes.map(rec=>{
             return{
                 id:rec.id,
@@ -71,3 +73,10 @@ export const  loadSearchResult = async function(query){
     }
 }
 // loadSearchResult("pizza");
+
+export const  getSearchResultPage = function(page=state.search.page){
+    state.search.page=page;
+ const start = (page-1) * state.search.resultPerPage;
+ const end = page * state.search.resultPerPage;
+ return state.search.result.slice(start,end);
+}

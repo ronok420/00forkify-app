@@ -597,6 +597,7 @@ var _resultsViewJs = require("./views/resultsView.js");
 var _resultsViewJsDefault = parcelHelpers.interopDefault(_resultsViewJs);
 // console.log(icons);
 // const recipeContainer = document.querySelector('.recipe');
+if (module.hot) module.hot.accept();
 // https://forkify-api.herokuapp.com/v2
 const showRecipe = async function() {
     try {
@@ -622,7 +623,8 @@ const controlSearchResult = async function() {
         const query = (0, _searchViewJsDefault.default).getQuery();
         if (!query) return;
         await _modelJs.loadSearchResult(query);
-        (0, _resultsViewJsDefault.default).render(_modelJs.state.search.result);
+        //  resultsView.render(model.state.search.result);
+        (0, _resultsViewJsDefault.default).render(_modelJs.getSearchResultPage(5));
     //  console.log(model.state.search.result);
     } catch (err) {
         console.log(err);
@@ -2514,13 +2516,16 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "state", ()=>state);
 parcelHelpers.export(exports, "loadRecipe", ()=>loadRecipe);
 parcelHelpers.export(exports, "loadSearchResult", ()=>loadSearchResult);
+parcelHelpers.export(exports, "getSearchResultPage", ()=>getSearchResultPage);
 var _config = require("./config");
 var _helper = require("./helper");
 const state = {
     recipe: {},
     search: {
         query: "",
-        result: []
+        result: [],
+        resultPerPage: (0, _config.ResPerPage),
+        page: 1
     }
 };
 const loadRecipe = async function(id) {
@@ -2532,8 +2537,8 @@ const loadRecipe = async function(id) {
         //    const data = await res.json();
         //    if(!res.ok) throw new Error( `${data.message} (${res.status})`);
         const data = await (0, _helper.getJSON)(`${(0, _config.API_URL)}/${id}`);
-        console.log(data);
-        console.log(data.data.recipe);
+        //    console.log(data);
+        //    console.log(data.data.recipe);
         let { recipe } = data.data;
         state.recipe = recipe;
     } catch (err) {
@@ -2547,7 +2552,7 @@ const loadSearchResult = async function(query) {
         state.search.query = query;
         // https://forkify-api.herokuapp.com/api/v2/recipes?search=pizza
         const data = await (0, _helper.getJSON)(`${(0, _config.API_URL)}/?search=${query}`);
-        console.log(data);
+        // console.log(data);
         state.search.result = data.data.recipes.map((rec)=>{
             return {
                 id: rec.id,
@@ -2560,16 +2565,23 @@ const loadSearchResult = async function(query) {
     } catch (err) {
         console.log(err);
     }
-} // loadSearchResult("pizza");
-;
+};
+const getSearchResultPage = function(page = state.search.page) {
+    state.search.page = page;
+    const start = (page - 1) * state.search.resultPerPage;
+    const end = page * state.search.resultPerPage;
+    return state.search.result.slice(start, end);
+};
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./config":"k5Hzs","./helper":"lVRAz"}],"k5Hzs":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "API_URL", ()=>API_URL);
 parcelHelpers.export(exports, "TIME_OUT", ()=>TIME_OUT);
+parcelHelpers.export(exports, "ResPerPage", ()=>ResPerPage);
 const API_URL = `https://forkify-api.herokuapp.com/api/v2/recipes`;
 const TIME_OUT = 10;
+const ResPerPage = 10;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lVRAz":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -2610,6 +2622,7 @@ var _fractional = require("fractional");
 var _view = require("./view");
 var _viewDefault = parcelHelpers.interopDefault(_view);
 class recipeView extends (0, _viewDefault.default) {
+    _errorMessage = "sorry we couldn't find  the recipe ";
     _parentELement = document.querySelector(".recipe");
     // _data;
     // render(data){
@@ -3047,13 +3060,14 @@ var _iconsSvgDefault = parcelHelpers.interopDefault(_iconsSvg);
 class View {
     _data;
     render(data) {
+        if (!data || Array.isArray(data) && data.length === 0) return this.renderError();
         this._data = data;
         // console.log(this._generateMarkup());
         const markup = this._generateMarkup();
         this._clear();
         // recipeContainer.innerText='';
         this._parentELement.insertAdjacentHTML("afterbegin", markup);
-        console.log(this._data);
+    // console.log(this._data);
     }
     _clear() {
         this._parentELement.innerHTML = "";
@@ -3070,8 +3084,8 @@ class View {
         // parentEl.incertAdjacentHTML('afterbeing',markup);
         this._parentELement.insertAdjacentHTML("afterbegin", markup);
     }
-    _errorDefault = "sorry we couldn't find  the recipe ";
-    renderError(errorMessage = this._errorDefault) {
+    //  _errorDefault="sorry we couldn't find  the recipe ";
+    renderError(errorMessage = this._errorMessage) {
         const markup = `<div class="error">
             <div>
               <svg>
@@ -3119,6 +3133,7 @@ var _iconsSvg = require("url:../../img/icons.svg");
 var _iconsSvgDefault = parcelHelpers.interopDefault(_iconsSvg);
 class ResultsView extends (0, _viewDefault.default) {
     _parentELement = document.querySelector(".results");
+    _errorMessage = "No recipe found for your query ! please try agian \uD83E\uDD2A\uD83E\uDD2A ";
     // _generateMarkup(){
     //   return  this._data.map(result=>{
     //         return `

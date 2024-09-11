@@ -6,6 +6,7 @@ import View from './view';
 
 
 class recipeView extends View{
+  _errorMessage="sorry we couldn't find  the recipe ";
     _parentELement = document.querySelector('.recipe');
     // _data;
     // render(data){

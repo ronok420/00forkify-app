@@ -9,7 +9,7 @@ export default class  View{
         this._clear();
         // recipeContainer.innerText='';
         this._parentELement.insertAdjacentHTML("afterbegin",markup);
-        // console.log(this._data);
+        console.log(this._data);
 
     }
 

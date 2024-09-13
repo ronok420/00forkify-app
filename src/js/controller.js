@@ -59,6 +59,7 @@ const controlSearchResult = async function(){
     if(!query) return;
    await model.loadSearchResult(query);
   //  resultsView.render(model.state.search.result);
+
    resultsView.render(model.getSearchResultPage(1));
 
   //  console.log(model.state.search.result);
@@ -80,12 +81,16 @@ const controlSearchResult = async function(){
 //  ['hashchange','load'].forEach(ev=>window.addEventListener(ev,showRecipe));
 
 
-// for (const ev of ['hashchange', 'load']) {
-//   window.addEventListener(ev, showRecipe);
-// }
+
+const controlPagination= function(gotoPage){
+  resultsView.render(model.getSearchResultPage(gotoPage));
+  paginationView.render(model.state.search);
+  
+}
 const  init = function(){
   recipeView.addHandlerRender(showRecipe);
   searchView.addHandlerSearch(controlSearchResult);
+  paginationView.addHandlerClick(controlPagination);
 }
 init();
 

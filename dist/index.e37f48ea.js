@@ -640,12 +640,14 @@ const controlSearchResult = async function() {
 // window.addEventListener('hashchange',showRecipe);
 // window.addEventListener('load',showRecipe);
 //  ['hashchange','load'].forEach(ev=>window.addEventListener(ev,showRecipe));
-// for (const ev of ['hashchange', 'load']) {
-//   window.addEventListener(ev, showRecipe);
-// }
+const controlPagination = function(gotoPage) {
+    (0, _resultsViewJsDefault.default).render(_modelJs.getSearchResultPage(gotoPage));
+    (0, _paginationViewJsDefault.default).render(_modelJs.state.search);
+};
 const init = function() {
     (0, _recipeViewJsDefault.default).addHandlerRender(showRecipe);
     (0, _searchViewJsDefault.default).addHandlerSearch(controlSearchResult);
+    (0, _paginationViewJsDefault.default).addHandlerClick(controlPagination);
 };
 init();
 
@@ -2556,7 +2558,7 @@ parcelHelpers.export(exports, "TIME_OUT", ()=>TIME_OUT);
 parcelHelpers.export(exports, "ResPerPage", ()=>ResPerPage);
 const API_URL = `https://forkify-api.herokuapp.com/api/v2/recipes`;
 const TIME_OUT = 10;
-const ResPerPage = 10;
+const ResPerPage = 20;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
@@ -3243,6 +3245,16 @@ var _iconsSvgDefault = parcelHelpers.interopDefault(_iconsSvg);
 // }
 class PaginationView extends (0, _viewDefault.default) {
     _parentELement = document.querySelector(".pagination");
+    addHandlerClick(handler) {
+        this._parentELement.addEventListener("click", function(e) {
+            const btn = e.target.closest(".btn--inline");
+            if (!btn) return;
+            console.log(btn);
+            const gotoPage = +btn.dataset.goto;
+            console.log(gotoPage);
+            handler(gotoPage);
+        });
+    }
     _generateMarkup() {
         const curPage = this._data.page;
         const numPages = Math.ceil(this._data.result.length / this._data.resultPerPage);
@@ -3256,7 +3268,7 @@ class PaginationView extends (0, _viewDefault.default) {
     }
     _generateMarkupButton(page, direction) {
         return `
-            <button class="btn--inline pagination__btn--${direction}">
+            <button data-goto=${page} class="btn--inline pagination__btn--${direction}">
             ${direction === "prev" ? ` <svg class="search__icon">
                  <use href="${0, _iconsSvgDefault.default}#icon-arrow-left"></use>
                  </svg>
